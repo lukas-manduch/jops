@@ -8,3 +8,4 @@ add_executable(main111ver3 main111/version3.cpp)
 
 #AGGRCOW
 add_executable(aggrcowver1 aggrcow/version1.cpp)
+add_executable(aggrcowver2 aggrcow/version2.cpp)
