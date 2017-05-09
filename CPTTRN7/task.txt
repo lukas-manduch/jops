@@ -1,0 +1,56 @@
+Print a regular grid pattern with diamond-like base elements.
+Use the \ (backslash) and the / (slash) characters to print 
+diamonds and . (dots) to fill the rest of the space.
+
+Input
+
+You are given t - the number of test cases and for each of the test
+cases three positive integers: r - the number of rows, c - the number
+ of columns in the grid and s - the size of each diamond.
+
+Output
+
+For each of the test cases output the requested pattern 
+(please have a look at the example). Use one line break 
+in between successive patterns.
+
+Example
+
+Input:
+3
+3 1 2 
+4 4 1 
+2 5 2
+
+Output:
+./\.
+/..\
+\../
+.\/.
+./\.
+/..\
+\../
+.\/.
+./\.
+/..\
+\../
+.\/.
+
+/\/\/\/\
+\/\/\/\/
+/\/\/\/\
+\/\/\/\/
+/\/\/\/\
+\/\/\/\/
+/\/\/\/\
+\/\/\/\/
+
+
+./\../\../\../\../\.
+/..\/..\/..\/..\/..\
+\../\../\../\../\../
+.\/..\/..\/..\/..\/.
+./\../\../\../\../\.
+/..\/..\/..\/..\/..\
+\../\../\../\../\../
+.\/..\/..\/..\/..\/.
