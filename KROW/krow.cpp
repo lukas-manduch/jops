@@ -1,6 +1,6 @@
 /*
 KROW - K-In-A-Row
-no tags 
+no tags
 
 Hansel and Gretel do not listen to their teacher at school. Instead
 they secretly play a game called K-In-A-Row. One day in the evening
@@ -8,7 +8,7 @@ they started to argue who had won more games that day. They collected
 all the papers they had used for playing the game and they started to
 count how many times each of them had won. But it was very tedious and
 they were sleepy. Help them to count how many games each of them had
-won. 
+won.
 
 K-In-A-Row is played in a square grid with M times N squares. Two
 players alternate in their moves. A player chooses an empty square and
@@ -18,7 +18,7 @@ his/her own signs in a row (either horizontally, vertically or in one
 of the two diagonal directions). The game stops immediately after one
 of the players completes K of his/her signs in a row; thus it may
 never happen that both players have completed K of their signs in a
-row. If no player creates such a row, nobody wins. 
+row. If no player creates such a row, nobody wins.
 Input file specification
 
 The first line contains the number of games L. It is followed by L
@@ -28,12 +28,12 @@ grid (M,N<200) and K is the length of the required row. The following
 N lines each containing M characters describe the situation after the
 end of the game. Character '.' denotes an empty field, characters 'x'
 and 'o' denote fields marked by Hansel and Gretel respectively. You
-may assume that the input is correct. 
+may assume that the input is correct.
 Output file specification
 
 The output file consists of two numbers separated by a colon ':'. The
 first number denotes the number of the games won by Hansel, the second
-one gives the number of the games won by Gretel. 
+one gives the number of the games won by Gretel.
 Example
 
 Input file:
@@ -51,7 +51,7 @@ oox.
 o.ox
 ..xx
 
-Output file: 
+Output file:
 0:1
 
 */
@@ -76,14 +76,14 @@ int solve(char desk[][MAX], int width, int height, int win_size)
   pos = (Position*)calloc(MAX*MAX + 4*MAX, sizeof(Position));
 
 
-  
+
   for(i=0; i<height; i++) {
     char last = 0;
     int total = 0;
     Position *curr, *prev;
-    curr = pos + i * (MAX) + MAX; 
+    curr = pos + i * (MAX) + MAX;
     prev = pos + i * (MAX); // Now I don't need to check zero l.
-    
+
 
     // At first, check if something is not in line
     for(j=0; j<width; j++) {
@@ -136,7 +136,7 @@ int solve(char desk[][MAX], int width, int height, int win_size)
 	  ret = -1;
 	  goto cleanup;
 	}
-	if(j!=0) 
+	if(j!=0)
 	  curr[j].two_left = prev[j-1].two_left + 1;
 	else
 	  curr[j].two_left = 1;
@@ -158,7 +158,7 @@ int solve(char desk[][MAX], int width, int height, int win_size)
       }
     }
   }
-  
+
  cleanup:
   if(pos)
     free(pos);
@@ -179,14 +179,14 @@ int main()
     int j, k;
     char desk[MAX][MAX];
     int ret;
-    
+
     std::cin >> width >> height >> win;
     for(j=0; j<height; j++) {
       for(k=0; k<width; k++) {
 	std::cin >> desk[j][k];
       }
     }
-    
+
     ret = solve(desk, width, height, win);
     if(ret == 1)
       second++;
@@ -196,13 +196,3 @@ int main()
   printf("%d:%d\n", second, first);
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
