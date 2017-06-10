@@ -43,11 +43,14 @@ def pali(str1, str2):
 
 total = int(input())
 for i in range(0, total):
-    str1 = sorted(sys.stdin.readline()[:-1].lower()
-    str2 = sorted(sys.stdin.readline()[:-1].lower()
+    str1 = sorted(sys.stdin.readline().lower())
+    str2 = sorted(sys.stdin.readline().lower())
     str1 = ''.join([i for i in str1 if i.isalpha()])
     str2 = ''.join([i for i in str2 if i.isalpha()])    
 
+    # print("LENS ARE " + str(len(str1)) + " " + str(len(str2)))
+    # print(str1)
+    # print(str2)
     if len(str1)!=len(str2):
         if len(str1) > len(str2):
             res = pali(str1, str2)
